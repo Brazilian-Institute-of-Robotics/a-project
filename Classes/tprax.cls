@@ -431,6 +431,9 @@
 \newcommand{\@thesisauthorrrr}{}
 \newcommand{\thesisauthorrrr}[1]{\renewcommand{\@thesisauthorrrr}{#1}}
 
+% O nome completo do autor da dissertação, tese ou tcc
+\newcommand{\@thesisauthorrrrr}{}
+\newcommand{\thesisauthorrrrr}[1]{\renewcommand{\@thesisauthorrrrr}{#1}}
 
 
 % O nome completo do orientador da dissertação, tese ou tcc
@@ -496,7 +499,8 @@
         \hspace*{11mm} \@thesisauthor \\
         \hspace*{57mm} \@thesisauthorr \\
         \hspace*{57mm} \@thesisauthorrr \\
-        \hspace*{57mm} \@thesisauthorrrr \\ \par
+        \hspace*{57mm} \@thesisauthorrrr \\ 
+         \hspace*{57mm} \@thesisauthorrrrr \\ \par
         \vspace*{5mm}
         \hspace*{5mm} Orientador: \hspace*{23mm} \@thesisadvisor \par
         \if@coadvisor
@@ -534,6 +538,10 @@
 
 \newenvironment{theauthorrrr}{%
 \@thesisauthorrrr
+}
+
+\newenvironment{theauthorrrrr}{%
+\@thesisauthorrrrr
 }
 
 \newenvironment{thetitle}{%

@@ -1,46 +1,43 @@
 % Modified from suthesis document class for LaTeX version 2e - 20/06/2003
-%%% ====================================================================
-%%% @LaTeX-class-file{
-%%% filename    = "tprax.cls",
-%%% version     = "0.0.0",
-%%% date        = "31 de outubro de 2017",
-%%% by          = "Marco Reis",
-%%% address     = "SENAI Cimatec
-%%%                Av. Orlando Gomes, 1845
-%%%                Salvador, Bahia - Brasil",
-%%% codetable   = "ISO/ASCII",
-%%% keywords    = "LaTeX, Projeto Theoprax",
-%%% supported   = "SENAI",
-%%% copyright©  = "Israel Vieira, All Rights Unreserved
-%%%                Premission is granted to use, modify and distribute
-%%%                this package under the terms and conditions of
-%%%                the GNU software licence",
-%%%
-%%% docstring   = "This file is the main file for the theoprax document
-%%%                class.
-%%%
-%%%                WARNING: There is not warranty for the program, either
-%%%                expressed or implied, including, but not limited to,
-%%%                the implied warranties of merchantability and fitness
-%%%                for a particular purpose and noninfrigement of third
-%%%                party rights. The entire risk as to the quality and
-%%%                performance of the program is with you. Should the
-%%%                program prove defective, you assume the cost of all
-%%%                necessary servicing, repair or correction".
-%%%  }
+% ====================================================================
+% @LaTeX-class-file
+% {
+% filename    = "tprax.cls",
+% version     = "0.0.0",
+% date        = "31 de outubro de 2017",
+% by          = "Marco Reis",
+% address     = "SENAI Cimatec
+%                Av. Orlando Gomes, 1845
+%                Salvador, Bahia - Brasil",
+% codetable   = "ISO/ASCII",
+% keywords    = "LaTeX, Projeto Theoprax",
+% supported   = "SENAI",
+% copyright©  = "Marco Reis, All Rights Unreserved
+%                Premission is granted to use, modify and distribute
+%                this package under the terms and conditions of
+%                the GNU software licence",
+%
+% docstring   = "This file is the main file for the theoprax document
+%                class.
+%
+%                WARNING: There is not warranty for the program, either
+%                expressed or implied, including, but not limited to,
+%                the implied warranties of merchantability and fitness
+%                for a particular purpose and noninfrigement of third
+%                party rights. The entire risk as to the quality and
+%                performance of the program is with you. Should the
+%                program prove defective, you assume the cost of all
+%                necessary servicing, repair or correction".
+% }
 %======================== initial code ==================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{Classes/tprax}[2017/10/31 v0.0.0]
-\typeout{---------------------------------------------------------}
-\typeout{Esta classe LaTeX está de acordo com os requerimentos do }
-\typeout{programa de pós-graduação para a submissão de uma disser-}
-\typeout{tação de mestrado ou tese de doutorado ao SENAI Cimatec  }
-\typeout{e  dos trabalhos de conclusão dos cursos de graduação    }
-\typeout{implementada inicialmente por Israel Vieira para atender }
-\typeout{os requisitos da University of Southampton e, posterior- }
-\typeout{mente, modificada por Hernane Pereira.                   }
-\typeout{---------------------------------------------------------}
-
+\ProvidesClass{Classes/tprax}[2017/10/31 v1.0.5]
+\typeout{------------------------------------------------------------}
+\typeout{Esta classe LaTeX está de acordo com os requerimentos do    }
+\typeout{do professor Marco Reis para desenvolvimento de documentação}
+\typeout{de projetos acadêmicos: teses, dissertações e trabalhos     }
+\typeout{de conclusão de cursos.                                     }
+\typeout{------------------------------------------------------------}
 %------------------------------------------------------------------------
 %Define extra packages required by tprax class
 %------------------------------------------------------------------------
@@ -54,6 +51,8 @@
 \RequirePackage{graphics}
 \RequirePackage{fancyhdr}
 \RequirePackage{ifpdf}
+%\RequirePackage[brazilian,hyperpageref]{backref}
+%\RequirePackage[alf,bibjustif,abnt-etal-text=it,abnt-repeated-author-omit=yes,abnt-emphasize=bf,abnt-etal-cite=3,abnt-etal-list=0]{abntex2cite}  
 %------------------------------------------------------------------------
 %Define the document output format
 %------------------------------------------------------------------------
@@ -65,7 +64,6 @@
         \pdfoutput = 1 % positive value for a PDF output, otherwise a DVI
         \pdftrue
 \fi
-
 %==============================================================================
 %%% ABNTeX ...
 %\usepackage{abnt-alf}
@@ -120,6 +118,9 @@
 
 \ProcessOptions\relax
 
+
+
+
 %------------------------------------------------------------------------
 % DOCUMENT CLASS
 %------------------------------------------------------------------------
@@ -149,6 +150,7 @@
 \typeout{---------------------------------------------------------}%
 
 \ProcessOptions\relax
+
 
 %------------------------------------------------------------------------
 % DOCUMENT OPTIONS
@@ -254,7 +256,9 @@
 \selectlanguage{brazil}   % Portugues
 
 %Change bibliography name to references for Report document class
-\renewcommand{\bibname}{Referências}
+%\renewcommand{\bibname}{Referências}
+\addto\captionsportuguese{\renewcommand{\refname}{Reference}}
+\renewcommand{\refname}{Reference}
 % foi alterada uma das linhas do portuges.ldf - c:\LaTeX\tex\generic\babel\
 
 \usepackage{ragged2e}
@@ -636,11 +640,11 @@
     \parindent 0.0\p@
 }
 
-\newenvironment{thetypeworkthree}{%
+\newenvironment{thetypeworkthree}{
 \MakeLowercase\@typework  \space
 }
 
-\newenvironment{thefacultytwo}{%
+\newenvironment{thefacultytwo}{
 \@faculty \space
 }
 

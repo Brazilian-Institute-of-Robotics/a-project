@@ -1,80 +1,57 @@
-%%%*******************************************************************************
-%  Classe Latex tprax, Version 0.0.0 31/10/2017
+% a-project.tex, v-1.0.3 marcoreis baseado no
+% abntex2-modelo-trabalho-academico.tex, v-1.9.7 laurocesar
+% Copyright 2012-2018 by abnTeX2 group at http://www.abntex.net.br/ 
+% 
+% This work consists of the files ........
+% 
+% -----------------------------------------------------------------------------
+% Modelo para desenvolvimento de documentação de projetos acadêmicos
+% (tese de doutorado, dissertação de mestrado e trabalhos de monografias em geral) 
+% em conformidade com ABNT NBR 14724:2011: Informação e documentação. 
+% -----------------------------------------------------------------------------
+% Opções para a documentação
 %
-%  Define as normas e estilo das dissertações, teses ou tcc do SENAI CIMATEC
-%
-%%%-------------------------------------------------------------------------------
-
-%%%-------------------------------------------------------------------------------
-% Changes log
-%%%-------------------------------------------------------------------------------
-% Version 0.0.0 - 00/00/2000
-% - 
-%%%-------------------------------------------------------------------------------
-
-%%%-------------------------------------------------------------------------------
-%  DOCUMENTATION WITH EXAMPLE
-%%%*******************************************************************************
-
-%%%-------------------------------------------------------------------------------
-%%% Thesis default options
-%%%-------------------------------------------------------------------------------
-%\documentclass[subook]{Classes/tprax}
-%\documentclass[sureport]{Classes/tprax}
-
-%%%-------------------------------------------------------------------------------
-%%% Thesis custom options
-%%%-------------------------------------------------------------------------------
-
-%%% Fancy page headings
+% Fancy page headings 
 %\documentclass[fancyheadings, subook]{Classes/tprax}
 %\documentclass[fancyheadings, sureport]{Classes/tprax}
-
-%%% Fancy chapters and sections headings
+%
+% Fancy chapters and sections headings 
 %\documentclass[fancychapter, subook]{Classes/tprax}
 %\documentclass[fancychapter, sureport]{Classes/tprax}
-
-%%% Fancy page , chapters and sections headings
+%
+% Fancy page , chapters and sections headings
 %\documentclass[fancyheadings, fancychapter, subook]{Classes/tprax}
-%\documentclass[fancyheadings, fancychapter, sureport]{Classes/tprax}
 \documentclass[fancyheadings, fancychapter, sureport]{Classes/tprax}
-
-%%%-------------------------------------------------------------------------------
-%%% Thesis Commands (ONLY with fancy page headings)
-%%%-------------------------------------------------------------------------------
-
-%%%Page header line width
+%
+% -----------------------------------------------------------------------------
+% Alguns comandos para a fancy page headings)
+%
+% Page header line width
 %\footlinewidth{value}
-
-%%%Page footer line width
+%
+% Page footer line width
 %\headlinewidth{value}
-
-%%%Page header and footer line width
+%
+% Page header and footer line width
 %\headingslinewidth{value}
-
-%%%Page header and footer lines without text
+%
+% Page header and footer lines without text
 %\headingslinesonly
-
-%%%The default line width is 0.3pt.
-%%%Set the value to 0pt to remove the page header and/or footer line
-
-%%%-------------------------------------------------------------------------------
-%%% SUThesis Supported Graphic Formats
-%%%-------------------------------------------------------------------------------
-% The figures formats supported depend upon the selected output file
-% Include your figure without the extention, the SUThesis will automatically
-% search the predefined `Figures' directory tree for the right file format.
 %
-% - The pdfLaTEX (PDF) supports graphics inclusions in PDF, JPG, PNG, and
-%   MetaPost (with .mps extention) formats.
+% The default line width is 0.3pt.
+% Set the value to 0pt to remove the page header and/or footer line
 %
-% - The Latex (DVI) supports graphics inclusions in EPS and PS formats.
-%%%-------------------------------------------------------------------------------
-
-
-%%%-------------------------------------------------------------------------------
-%%% Árvore de diretório tprax
-%%%-------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------
+% Formato de figuras suportado
+% -------------------------------------------------------------------------------
+% O formato das figuras depende da forma como o arquivo de saída é gerado.
+% As figuras inseridas na pasta Figures serão automaticamente reconhecidas sem
+% a necessidade de inserir a extensão do arquivo.
+%
+% O pdfLaTEX (PDF) suporta figuras com as extensões: pdf, jpg, png e mps.
+%
+% -------------------------------------------------------------------------------
+% Árvore do diretório a-project.tex
 %  Diretório
 %       \Classes        (requerido)
 %       \Figures        (requerido) --------------------------------->
@@ -89,41 +66,25 @@
 %       \Chapters       (requerido)
 %       \Appendices     (optional)
 %       \References     (requerido)
-%%%-------------------------------------------------------------------------------
-
-%%%-------------------------------------------------------------------------------
-%%% PDF File Summary
-%%%-------------------------------------------------------------------------------
+%
+% -------------------------------------------------------------------------------
+% PDF File resumo
 \ifpdf
-    \hypersetup{backref,
-                colorlinks  = true,
-                pdftitle    = Modelo de visualização de informação de redes complexas utilizando sistemas de identificação de gestos e realidade virtual,
-                pdfauthor   = {Marco Reis, marco.a.reis@gmail.com},
-                pdfsubject  = Mestre em Engenharia,
-                pdfcreator  = Subtitulo,
-                pdfproducer = PDFLatex,
-                pdfkeywords = {Palavra-chave1, Palavra-chave2, Palavra-chave3}
+    \hypersetup
+    {
+    	backref,
+        colorlinks  = true,
+        pdftitle    = Modelo de documentação,
+        pdfauthor   = {Marco Reis, marco.a.reis@gmail.com},
+        pdfsubject  = Mestre em Engenharia,
+        pdfcreator  = Subtitulo,
+        pdfproducer = PDFLatex,
+        pdfkeywords = {documentação, latex, dissertação, tese}
     }
  \fi
-
-%%%-------------------------------------------------------------------------------
-%%% Required packages
-%%%-------------------------------------------------------------------------------
-% - ifthen
-% - setspace
-% - amsmath
-% - amsfonts
-% - amssymb
-% - amsthm
-% - eucal
-% - graphics
-% - fancyhdr
-%%%-------------------------------------------------------------------------------
-
-%%%-------------------------------------------------------------------------------
-%%% Optional packages
-%%%-------------------------------------------------------------------------------
-%\usepackage[latin1]{inputenc}
+%
+% -------------------------------------------------------------------------------
+% Relação de pacotes opcionais utilizados
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage{longtable}
@@ -135,57 +96,66 @@
 \usepackage{float,subfigure}
 \usepackage{cite}
 \usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry}
-%\usepackage[alf,abnt-etal-list=5]{abntcite}
 \usepackage[alf]{abntex2cite}
 \usepackage{ifpdf}
 \usepackage{shadow}
 \usepackage{wrapfig}
 \usepackage[normalem]{ulem}
-\usepackage{makeidx} % cria indice remissivo
+\usepackage{makeidx}
 \usepackage{yfonts}
-\makeindex % cria o indice remissivo
-%Tables and Figures Caption
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{microtype}
+\usepackage{lipsum}
+%
+\makeindex 
 \setlength{\LTcapwidth}{\textwidth}
-
-
-
-
-
-%\usepackage{algorithm}
-%\usepackage{algorithmic}
-
-
-
-
-%\newtheorem{theorem}{Teorema}
-%\newtheorem{definition}[theorem]{Defini\c{c}\~ao}
-
-
-%%%-------------------------------------------------------------------------------
-%%% Start thesis root document
-%%%-------------------------------------------------------------------------------
+%
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}[theorem]{Definição}
+%
+% -------------------------------------------------------------------------------
+% Configurações do pacote backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi
+}
+% 
+% -------------------------------------------------------------------------------
+% Início do documento raiz
 \begin{document}
-    %%----------------------------------------------------------------------------
-    %% Define the title page
-    %%----------------------------------------------------------------------------
+% Definição do título da página
     \university{Centro Universitário SENAI CIMATEC}
-%    \faculty{Pro\-gra\-ma de P\'os-gra\-dua\-\c{c}\~ao em Mo\-de\-la\-gem Com\-pu\-ta\-cio\-nal e Tec\-no\-lo\-gia In\-dus\-trial}
-    %\faculty{Centro Universitário Senai Cimatec}
-%    \school{School of Mathematics}
-% ********************************************** TCC ****************
+	%\faculty{Programa de...}
+	%\school{Escola de...}
+% 
     \course{Engenharia Elétrica}
     \typework{Projeto Theoprax de Conclusão de Curso}
-% ********************************************************************
-% ********************************************* Mestrado ******************
-%    \course{Mestrado em Modelagem Computacional e Tecnologia Industrial}
-%    \typework{Disserta\c{c}\~ao de mestrado}
-%    \typework{Exame de Qualificação de Mestrado}
-% ********************************************** Doutorado ****************
-%    \course{Engenharia Elétrica}
-%    \typework{Tese de doutorado}
-%    \typework{Exame de Qualificação de doutorado}
-% ********************************************************************
- \thesistitle{Desenvolvimento do robô de inspeção.}
+% 
+	%\course{Mestrado em Modelagem Computacional e Tecnologia Industrial}
+	%\typework{Disserta\c{c}\~ao de mestrado}
+	%\typework{Exame de Qualificação de Mestrado}
+% 
+	%\course{Engenharia Elétrica}
+	%\typework{Tese de doutorado}
+	%\typework{Exame de Qualificação de doutorado}
+%
+% -------------------------------------------------------------------------------
+% Informações gerais
+    \thesistitle{Desenvolvimento do robô de inspeção.}
     \hidevolume
     \thesisvolume{Volume 1 of 1}
     \thesisauthor{Michael Faraday}
@@ -194,29 +164,23 @@
     \thesisauthorrrr{Nikola Tesla}
     \thesisauthorrrrr{Sir Isaac Newton}
     \thesisadvisor{Prof. Marco Reis, M.Eng.}
-    \hidecoadvisor
-    %\thesiscoadvisor{Marco Reis}
+    %\hidecoadvisor
+    \thesiscoadvisor{Marco Reis}
     \thesisdegreetitle{Bacharel em Engenharia}
-    %\thesisdegreetitle{Doutor em }
-%    \thesismonthyear{M\^es de Ano}
     \thesismonthyear{Setembro de 2018}
-
-
+% 
     \maketitlepage
-
-    %%----------------------------------------------------------------------------
-    %% Inserir Folha de rosto, Nota de estilo, folha de assinaturas, dedicatoria
-    %%----------------------------------------------------------------------------
+%
+% ----------------------------------------------------------------------------
+% Inserir Folha de rosto, Nota de estilo, folha de assinaturas, dedicatoria
     \include{Others/FolhaRosto}
     %\include{Others/NotaEstilo}
     %\include{Others/FolhaAssinaturas}
     \include{Others/dedicatoria}
     \include{Others/agradecimentos}
-
-
-    %%----------------------------------------------------------------------------
-    %% Resumo/abstract, sumário e siglas
-    %%----------------------------------------------------------------------------
+%
+% ----------------------------------------------------------------------------
+% Resumo/abstract, sumário e siglas
     \begin{romanpagenumbers}
         \include{Others/resumo}
         \include{Others/abstract}
@@ -227,10 +191,9 @@
         \include{Others/simbolos}
         %Switch the page numbering back to the default format
     \end{romanpagenumbers}
-
-    %%----------------------------------------------------------------------------
-    %% Include thesis chapters
-    %%----------------------------------------------------------------------------
+%
+% ---------------------------------------------------------------------------
+% Include thesis chapters
     \parskip=\baselineskip
     \include{Chapters/ChapterOne}
     \include{Chapters/ChapterTwo}
@@ -242,11 +205,9 @@
     %\include{Chapters/ChapterEight}
     \include{Chapters/ChapterConsideracoesfinais}
     % include more chapters ...
-
-   %%----------------------------------------------------------------------------
-    %% Include thesis appendices
-    %%----------------------------------------------------------------------------
-
+%
+% ----------------------------------------------------------------------------
+% Include thesis appendices
     \begin{thesisappendices}
         \include{Appendices/qfd}
         \include{Appendices/diagmec}
@@ -254,24 +215,20 @@
         \include{Appendices/wireframes}
         \include{Appendices/logbook}
     \end{thesisappendices}
-
-    %%----------------------------------------------------------------------------
-    %% Configurar as referencias bibliograficas
-    %%----------------------------------------------------------------------------
-
-
+%
+% ----------------------------------------------------------------------------
+% Configurar as referencias bibliograficas
+	\renewcommand\bibname{Referências}
     \addcontentsline{toc}{chapter}{Referências}
-    %\bibliographystyle{abnt-alf}
-
-
     \bibliography{References/referencias}
-
-    %%----------------------------------------------------------------------------
-    %% Finishing
-    %%----------------------------------------------------------------------------
-
+%
+% ----------------------------------------------------------------------------
+% Finishing him
     \include{Others/ultimafolha}
 \end{document}
-%%%-------------------------------------------------------------------------------
-%%% Here we finished with your thesis formating. Good luck with the contents
-%%%-------------------------------------------------------------------------------
+%
+% -------------------------------------------------------------------------------
+% Aqui termina a formatação para o documento.
+% In God We Trust. All Other Bring Data. 
+%
+% -------------------------------------------------------------------------------

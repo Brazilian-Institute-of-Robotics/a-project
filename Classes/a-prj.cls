@@ -31,7 +31,7 @@
 % }
 %======================== initial code ==================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{Classes/tprax}[2017/10/31 v1.0.5]
+\ProvidesClass{Classes/a-prj}[2017/10/31 v1.0.5]
 \typeout{------------------------------------------------------------}
 \typeout{Esta classe LaTeX está de acordo com os requerimentos do    }
 \typeout{do professor Marco Reis para desenvolvimento de documentação}
@@ -39,7 +39,7 @@
 \typeout{de conclusão de cursos.                                     }
 \typeout{------------------------------------------------------------}
 %------------------------------------------------------------------------
-%Define extra packages required by tprax class
+%Define extra packages required by a-prj class
 %------------------------------------------------------------------------
 \RequirePackage{ifthen}
 \RequirePackage{setspace}
@@ -75,9 +75,9 @@
 %------------------------------------------------------------------------
 %Define the thesis style: report or book
 %Usage:
-%           1 - default (report) =  \documentclass{tprax}
-%           2 - book             =  \documentclass[usbook]{tprax}
-%           3 - report           =  \documentclass[usreport]{tprax}
+%           1 - default (report) =  \documentclass{a-prj}
+%           2 - book             =  \documentclass[usbook]{a-prj}
+%           3 - report           =  \documentclass[usreport]{a-prj}
 %
 %Options:
 %
@@ -86,7 +86,7 @@
 
 
 %------------------------------------------------------------------------
-% tprax class options definitions
+% a-prj class options definitions
 %------------------------------------------------------------------------
 %Variable to hold the selected document class
 \newboolean{su@sureport} \setboolean{su@sureport}{true}
@@ -126,23 +126,23 @@
 %------------------------------------------------------------------------
 \typeout{---------------------------------------------------------}
 \ifsu@sureport
-    \typeout{tprax usará a classe de documento -> report.}
+    \typeout{a-prj usará a classe de documento -> report.}
     \ifx\pdfoutput\undefined
-        \typeout{tprax gerará um arquivo DVI.}
+        \typeout{a-prj gerará um arquivo DVI.}
         \LoadClass[11pt, a4paper, oneside]{report}
     \else
-        \typeout{tprax gerará um arquivo PDF.}
+        \typeout{a-prj gerará um arquivo PDF.}
              \LoadClass[pdftex, 11pt, a4paper, oneside]{report}
     \fi
     \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \else
-    \typeout{tprax usará a classe de documento -> book.}
+    \typeout{a-prj usará a classe de documento -> book.}
     \ifx\pdfoutput\undefined
-        \typeout{tprax gerará um arquivo DVI.}
+        \typeout{a-prj gerará um arquivo DVI.}
         \LoadClass[11pt, a4paper, oneside]{book}
     \else
              % ALTEREI O TAMANHO PARA 12PT
-        \typeout{tprax gerará um arquivo PDF.}
+        \typeout{a-prj gerará um arquivo PDF.}
         \LoadClass[pdftex, 12pt, a4paper, oneside]{book}
     \fi
     \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -635,7 +635,7 @@
 % NOTA SOBRE O ESTILO
 %------------------------------------------------------------------------
 \newenvironment{notaestilo}{
-    \writesectiontitle{Nota sobre o estilo do tprax}
+    \writesectiontitle{Nota sobre o estilo a-prj}
     \thispagestyle{empty}
     \parindent 0.0\p@
 }

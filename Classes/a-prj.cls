@@ -477,7 +477,7 @@
     \vspace*{10mm}
 
     \begin{center}
-        \includegraphics[scale=.30]{LogoFIEBSENAI} \par
+        \includegraphics[scale=.1]{logo-senai-cimatec} \par
         \large\bfseries{\MakeUppercase{\@university}}\par
         \doublespacing
         \vspace*{3mm}
@@ -505,12 +505,12 @@
         \hspace*{57mm} \@thesisauthorrr \\
         \hspace*{57mm} \@thesisauthorrrr \\ 
          \hspace*{57mm} \@thesisauthorrrrr \\ \par
-        \vspace*{5mm}
-        \hspace*{5mm} Orientador: \hspace*{23mm} \@thesisadvisor \par
-        \if@coadvisor
-            \hspace*{5mm} Co-orientador: \hspace*{17mm} \@thesiscoadvisor \par
-            \vspace*{10mm}
-        \fi
+        \vspace*{45mm}
+        % \hspace*{5mm} Orientador: \hspace*{23mm} \@thesisadvisor \par
+        % \if@coadvisor
+        %     \hspace*{5mm} Co-orientador: \hspace*{17mm} \@thesiscoadvisor \par
+        %     \vspace*{10mm}
+        % \fi
         \vspace*{30mm}
         \begin{center}
         	\@thesismonthyear \par
